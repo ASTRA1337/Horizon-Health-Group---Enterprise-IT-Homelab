@@ -12,16 +12,14 @@ A growing organization needs centrally managed identities, dependable DNS, appro
 
 ```mermaid
 flowchart TB
-    HOST["Windows 11 Home gaming PC<br/>VirtualBox hypervisor"]
     LAN["HHG-LAN<br/>VirtualBox Internal Network<br/>10.20.30.0/24"]
     DC["HHG-DC01<br/>Windows Server 2025<br/>AD DS + DNS<br/>10.20.30.10"]
     CLIENT["HHG-CLIENT01<br/>Windows workstation<br/>(planned)"]
-    HOST --> LAN
     LAN --> DC
     LAN -. "planned" .-> CLIENT
 ```
 
-**Isolation:** The lab's VirtualBox Internal Network has no default gateway and is not bridged into the household LAN. The existing home-automation environment remains separate.
+**Isolation:** The lab uses a VirtualBox Internal Network with no default gateway. External access is not configured in the current environment.
 
 ## Verified milestones
 
@@ -44,8 +42,7 @@ flowchart TB
 
 ## Technology
 
-**Host:** Windows 11 Home, AMD Ryzen 7 8700F, 32 GiB RAM  
-**Virtualization:** Oracle VirtualBox  
+**Virtualization:** Oracle VirtualBox (PC-based virtualization host)  
 **Server:** Windows Server 2025 Evaluation, Active Directory Domain Services, DNS  
 **Administration and validation:** PowerShell, Windows Server Manager, DNS tools  
 **Portfolio:** Markdown, Git, GitHub
