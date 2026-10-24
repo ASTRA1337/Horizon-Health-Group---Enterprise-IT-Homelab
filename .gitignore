@@ -1,0 +1,30 @@
+# VM disks and machine state
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.iso
+*.vbox
+*.vbox-prev
+*.sav
+*.nvram
+Snapshots/
+
+# Secrets and private configuration
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+id_rsa
+id_ed25519
+*secrets*
+*credentials*
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
