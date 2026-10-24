@@ -2,7 +2,7 @@
 
 ## Objective
 
-Deploy and verify a Domain Controller and DNS service for the fictional organization `corp.horizonhealth.test` without disturbing the household network.
+Deploy and verify a Domain Controller and DNS service for the fictional organization `corp.horizonhealth.test` within the isolated virtual lab network `HHG-LAN`.
 
 ## Work completed
 
