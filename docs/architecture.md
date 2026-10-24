@@ -6,9 +6,9 @@
 
 No actual healthcare, patient, or employee data is stored in the lab.
 
-## Host and virtual infrastructure
+## Virtual infrastructure
 
-The host is a Windows 11 Home desktop with an AMD Ryzen 7 8700F, 32 GiB RAM, and SSD storage. VirtualBox runs the guest machines.
+The environment runs as virtual machines managed by Oracle VirtualBox. The architecture focuses on the lab's guest systems, virtual network, and deployed services.
 
 | Component | Status | Configuration |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ The host is a Windows 11 Home desktop with an AMD Ryzen 7 8700F, 32 GiB RAM, and
 
 ### Isolated virtual networking
 
-VirtualBox's **Internal Network** mode links lab guests to each other without directly exposing the lab to the household LAN. This is safer for experimentation, but the VMs do not initially have internet access for updates. Controlled access can be designed in a later phase.
+VirtualBox's **Internal Network** mode allows the lab VMs to communicate on `HHG-LAN`. No default gateway or external connectivity is configured at this stage. A controlled update path can be designed in a later phase.
 
 ### Single domain controller
 
