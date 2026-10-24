@@ -1,2 +1,61 @@
-# enterprise-it-homelab
-A virtual enterprise IT homelab focused on Windows Server, Active Directory, networking, automation, and cybersecurity.
+# Enterprise IT Infrastructure & Security Homelab
+
+A hands-on **simulated small-business IT environment** built with VirtualBox, Windows Server, and an isolated virtual network. This project follows **Horizon Health Group (HHG)**, a fictional 35-employee outpatient healthcare organization, to practice infrastructure design, identity administration, troubleshooting, automation, and defensive security.
+
+> **Scope:** This is a personal learning project, not a production environment, a real healthcare deployment, or professional IT employment. All business scenarios and employee data are fictional.
+
+## Business problem
+
+A growing organization needs centrally managed identities, dependable DNS, appropriate departmental access, repeatable IT operations, and tested recovery processes. Rather than deploying tools independently, this lab links each infrastructure decision to a business requirement and verifies its behavior.
+
+## Architecture (current state)
+
+```mermaid
+flowchart TB
+    HOST["Windows 11 Home gaming PC<br/>VirtualBox hypervisor"]
+    LAN["HHG-LAN<br/>VirtualBox Internal Network<br/>10.20.30.0/24"]
+    DC["HHG-DC01<br/>Windows Server 2025<br/>AD DS + DNS<br/>10.20.30.10"]
+    CLIENT["HHG-CLIENT01<br/>Windows workstation<br/>(planned)"]
+    HOST --> LAN
+    LAN --> DC
+    LAN -. "planned" .-> CLIENT
+```
+
+**Isolation:** The lab's VirtualBox Internal Network has no default gateway and is not bridged into the household LAN. The existing home-automation environment remains separate.
+
+## Verified milestones
+
+- [x] Create VirtualBox VM `HHG-DC01` (2 vCPUs, 4 GiB RAM, 80 GB dynamically allocated disk, UEFI).
+- [x] Install Windows Server 2025 Evaluation (Desktop Experience).
+- [x] Rename the guest to `HHG-DC01` and configure `10.20.30.10/24` on `HHG-LAN`.
+- [x] Capture a baseline snapshot before Active Directory deployment.
+- [x] Promote the server as the first domain controller for `corp.horizonhealth.test`.
+- [x] Confirm Active Directory and DNS with `Get-ADDomain`, `dcdiag`, `nltest`, and DNS lookups.
+- [ ] Create organizational units, security groups, and synthetic employee accounts.
+- [ ] Deploy and domain-join a Windows client; verify sign-in and access controls.
+- [ ] Automate employee lifecycle administration with PowerShell.
+- [ ] Add security monitoring, hardening, incident investigations, and recovery tests.
+
+## Documentation
+
+- [Architecture and design decisions](docs/architecture.md)
+- [Implementation and validation](docs/implementation.md)
+- [Case study: LDAP SRV lookup troubleshooting](docs/dns-troubleshooting.md)
+
+## Technology
+
+**Host:** Windows 11 Home, AMD Ryzen 7 8700F, 32 GiB RAM  
+**Virtualization:** Oracle VirtualBox  
+**Server:** Windows Server 2025 Evaluation, Active Directory Domain Services, DNS  
+**Administration and validation:** PowerShell, Windows Server Manager, DNS tools  
+**Portfolio:** Markdown, Git, GitHub
+
+## Publication and security
+
+No credentials, passwords, private keys, real patient information, or real employee data are published. VM disks, ISO images, and snapshots are excluded from version control. Commands and screenshots are reviewed before publication.
+
+## Roadmap
+
+**Identity administration → Domain-joined workstations → Access controls and Group Policy → PowerShell automation → Security monitoring and incident response → Backup and restoration.**
+
+Each milestone will document intended behavior, actual test results, configuration decisions, and problems encountered.
