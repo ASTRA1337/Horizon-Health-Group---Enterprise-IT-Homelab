@@ -29,7 +29,9 @@ flowchart TB
 - [x] Capture a baseline snapshot before Active Directory deployment.
 - [x] Promote the server as the first domain controller for `corp.horizonhealth.test`.
 - [x] Confirm Active Directory and DNS with `Get-ADDomain`, `dcdiag`, `nltest`, and DNS lookups.
-- [ ] Create organizational units, security groups, and synthetic employee accounts.
+- [x] Create `HHG/Employees`, `HHG/Groups`, and `HHG/Workstations` organizational units.
+- [x] Create departmental global security groups and provision the first fictional Billing user.
+- [x] Verify `maya.carter` is a member of `GG_Billing` in Active Directory.
 - [ ] Deploy and domain-join a Windows client; verify sign-in and access controls.
 - [ ] Automate employee lifecycle administration with PowerShell.
 - [ ] Add security monitoring, hardening, incident investigations, and recovery tests.
@@ -39,6 +41,7 @@ flowchart TB
 - [Architecture and design decisions](docs/architecture.md)
 - [Implementation and validation](docs/implementation.md)
 - [Case study: LDAP SRV lookup troubleshooting](docs/dns-troubleshooting.md)
+- [Identity administration: OUs, groups, first employee](docs/identity-administration.md)
 
 ## Technology
 
