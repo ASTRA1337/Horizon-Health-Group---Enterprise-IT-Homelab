@@ -30,8 +30,8 @@ flowchart TB
 - [x] Promote the server as the first domain controller for `corp.horizonhealth.test`.
 - [x] Confirm Active Directory and DNS with `Get-ADDomain`, `dcdiag`, `nltest`, and DNS lookups.
 - [x] Create `HHG/Employees`, `HHG/Groups`, and `HHG/Workstations` organizational units.
-- [x] Create departmental global security groups and provision the first fictional Billing user.
-- [x] Verify `maya.carter` is a member of `GG_Billing` in Active Directory.
+- [x] Create departmental global security groups and provision a fictional employee account.
+- [x] Verify the employee account has the appropriate departmental security group membership.
 - [ ] Deploy and domain-join a Windows client; verify sign-in and access controls.
 - [ ] Automate employee lifecycle administration with PowerShell.
 - [ ] Add security monitoring, hardening, incident investigations, and recovery tests.
