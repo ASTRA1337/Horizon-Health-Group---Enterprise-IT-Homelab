@@ -1,4 +1,4 @@
-# Enterprise IT Infrastructure & Security Homelab
+# Horizon Health Group — Enterprise IT Homelab
 
 A hands-on **simulated small-business IT environment** built with VirtualBox, Windows Server, and an isolated virtual network. The scenario follows **Horizon Health Group (HHG)**, a fictional 35-employee outpatient healthcare organization, to demonstrate infrastructure deployment, identity administration, endpoint policy, access control, and structured troubleshooting.
 
